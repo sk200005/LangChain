@@ -10,6 +10,8 @@ prompt = PromptTemplate(
     input_variables= ['topic']
 )
 
+
+
 model = ChatGoogleGenerativeAI(model = "gemini-2.5-flash")
 
 parser = StrOutputParser()      #Parser converts model response.
