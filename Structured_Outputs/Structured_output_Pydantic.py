@@ -1,16 +1,16 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
-from dotenv import load_dotenv
+from langchain_google_genai import ChatGoogleGenerativeAI  #LangChain wrapper for Google Gemini models.
+from dotenv import load_dotenv                             #Loads environment variables from a .env file.
 from pydantic import BaseModel, Field
 from typing import Optional
 
-load_dotenv()
+load_dotenv()   #Reads .env
 
 model = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash"
 )
 
 
-class Review(BaseModel):
+class Review(BaseModel):          # Always return output in this format.
 
     key_theme: list[str] = Field(
         description="Write down all key themes discussed in the review"
@@ -35,7 +35,7 @@ class Review(BaseModel):
     )
 
 
-structured_model = model.with_structured_output(Review)
+structured_model = model.with_structured_output(Review)    #Convert model into structured model
 
 result = structured_model.invoke(
     "I’ve been using the Google Pixel 8 and overall I’m very happy with it. "
