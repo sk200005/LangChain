@@ -14,7 +14,7 @@ prompt = PromptTemplate(
 
 model = ChatGoogleGenerativeAI(model = "gemini-2.5-flash")
 
-parser = StrOutputParser()      #Parser converts model response.
+parser = StrOutputParser()       # Converts model response → string
 
 chain = prompt | model | parser      # LCEL syntax (LangChain Expression Language)
 

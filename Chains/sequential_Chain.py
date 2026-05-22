@@ -17,7 +17,7 @@ prompt2 = PromptTemplate(
 
 Model = ChatGoogleGenerativeAI(model = "gemini-2.5-flash")
 
-Parser = StrOutputParser()
+Parser = StrOutputParser()       # Converts model response → string
 
 chain = prompt1 | Model | Parser | prompt2 | Model | Parser
 
