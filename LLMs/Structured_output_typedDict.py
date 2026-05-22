@@ -2,13 +2,16 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 from typing import TypedDict, Annotated, Optional
 
+
 load_dotenv()
 
 model = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash"
 )
 
+
 class Review(TypedDict):
+    
     key_theme: Annotated[
         list[str],
         "Write down all key themes discussed in the review"
